@@ -1,6 +1,7 @@
 import { FC, useState } from 'react';
 import {
     Box,
+    Paper,
     List,
     ListItem,
     Grid,
@@ -67,9 +68,8 @@ const TaskList: FC = () => {
                     Create your first Task ;)
                 </Button> :
                 <>
-                    <Box
-                        className={classes.listWrapper}
-                    >
+                    <Paper style={{ maxHeight: 400, overflow: 'auto', width: '100%' }}>
+
                         <List>
                             {taskList.map((task) => (
                                 <ListItem key={task.id} component="div" className={classes.listItem} >
@@ -98,7 +98,8 @@ const TaskList: FC = () => {
                                 </ListItem>
                             ))}
                         </List>
-                    </Box>
+
+                    </Paper>
                     <Stack alignItems="flex-end" sx={{ width: '100%' }}>
                         <Button variant="contained" color="error" onClick={() => setOpen(true)} sx={{ borderRadius: 50, width: 45, height: 45, minWidth: 0 }}>+</Button>
                     </Stack>

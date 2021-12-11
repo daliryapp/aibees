@@ -1,12 +1,6 @@
 import { makeStyles } from 'theme';
 
 const TaskListStyle = makeStyles(({ spacing, palette: { onPrimary, neutral, primary, error, warning, success } }) => ({
-    listWrapper: {
-        width: '100%',
-        height: 400,
-        overflowY: 'auto',
-        overflowX: 'hidden',
-    },
     listItem: {
         border: '1px solid',
         borderColor: neutral[400],
