@@ -78,7 +78,7 @@ const CreateTask: FC<ICreateTask> = (props) => {
                         validationSchema={validateSchema}
                         onSubmit={async (
                             values,
-                            { setStatus, setSubmitting },
+                            { setStatus, setSubmitting, resetForm },
                         ): Promise<void> => {
                             try {
                                 if (taskInfo && taskInfo.id) {
@@ -94,6 +94,7 @@ const CreateTask: FC<ICreateTask> = (props) => {
                                 } else {
                                     dispatch(addTask(values.title!, values.description!, values.gift!, values.priority!, false));
                                 }
+                                resetForm();
                             } catch (err) {
                                 setStatus({ success: false });
                                 setSubmitting(false);
